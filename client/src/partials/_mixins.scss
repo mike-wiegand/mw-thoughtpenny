@@ -1,0 +1,258 @@
+@use "./fonts" as *;
+@use "./variables" as *;
+
+@mixin tablet-breakpoint {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop-breakpoint {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+// Mobile Header Styling
+// H1
+@mixin mobilePageHeader {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+// H2
+@mixin mobileSubHeader {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+// H3
+@mixin mobileLabelsLinksButtons {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+// H4
+@mixin mobileTableHeader {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}
+
+// P1
+@mixin mobileBodyLarge {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+}
+
+// P2
+@mixin mobileBodyMedium {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+@mixin mobileBodySmall {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}
+
+// Tablet & Desktop Header Styling
+// H1
+@mixin tabletDesktopPageHeader {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+// H2
+@mixin tabletDesktopSubHeader {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+// H3
+@mixin tabletDesktopLabelsLinksButtons {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+// H4
+@mixin tabletDesktopTableHeader {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+// P1
+@mixin tabletDesktopBodyLarge {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+// P2
+@mixin tabletDesktopBodyMedium {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@mixin tabletDesktopBodySmall {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+// Button & Link Styling
+// Mobile Buttons
+@mixin mobileButtonPrimary {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $primary-blue;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin mobileButtonPrimaryHover {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $background-graphite;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin mobileButtonSecondary {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $primary-white;
+  color: $secondary-slate;
+  border: 0.5px solid $secondary-slate;
+  font-family: inherit;
+}
+
+@mixin mobileButtonSecondaryHover {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $primary-white;
+  color: $primary-blue;
+  border: 0.5px solid $primary-blue;
+  font-family: inherit;
+}
+
+@mixin tabletDesktopButtonPrimary {
+  height: 2.375rem;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $primary-blue;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin tabletDesktopButtonPrimaryHover {
+  height: 2.375rem;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $background-graphite;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin tabletDesktopButtonSecondary {
+  height: 2.375rem;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $primary-white;
+  color: $primary-blue;
+  border: 0.5px solid $secondary-cloud;
+  font-family: inherit;
+}
+
+@mixin tabletDesktopButtonSecondaryHover {
+  height: 2.375rem;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $primary-white;
+  color: $primary-blue;
+  border: 0.5px solid $primary-blue;
+  font-family: inherit;
+}
+
+@mixin mobileDeleteButton {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $accent-red;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin mobileDeleteButtonHover {
+  height: 2.25rem;
+  width: 100%;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $background-graphite;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin tabletDesktopDeleteButtonPrimary {
+  height: 2.375rem;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $accent-red;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin tabletDesktopDeleteButtonPrimaryHover {
+  height: 2.375rem;
+  border-radius: 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $background-graphite;
+  color: $primary-white;
+  font-family: inherit;
+}
+
+@mixin linkText {
+  text-decoration: none;
+  color: $primary-blue;
+  font-family: inherit;
+}
+
+@mixin linkTextHover {
+  text-decoration: underline;
+  color: $primary-blue;
+  font-family: inherit;
+}
+
+// Flex box mixins
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexCenter {
+  justify-content: center;
+  align-items: center;
+}

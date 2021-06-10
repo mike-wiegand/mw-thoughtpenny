@@ -1,0 +1,146 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  @include tablet-breakpoint {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @include desktop-breakpoint {
+    padding: 1rem 7.5rem;
+  }
+
+  &__uploadLink {
+    text-decoration: none;
+    width: 100%;
+    margin-right: 1rem;
+    font-weight: 600;
+  }
+
+  &__imageContainter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__interact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    @include tablet-breakpoint {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__search--container {
+    width: 100%;
+    margin: 0.5rem 0;
+
+    @include tablet-breakpoint {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 1.5rem 0 0;
+    }
+  }
+
+  &__search {
+    width: 93.5%;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid $secondary-cloud;
+    background: $secondary-slate;
+
+    @include tablet-breakpoint {
+      width: 30vw;
+      padding-left: 0.75rem;
+    }
+  }
+
+  &__search::placeholder {
+    font-family: "AvenirNext";
+    color: black;
+    font-size: 1rem;
+    padding-left: 2rem;
+    background-image: url("../../assets/Icons/Icon-search.svg");
+    background-repeat: no-repeat;
+    background-position: 1% 50%;
+  }
+
+  &__search:focus {
+    outline: none;
+    border-color: $primary-blue;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+
+    @include tablet-breakpoint {
+      display: flex;
+      flex-direction: row;
+      min-width: fit-content;
+    }
+  }
+
+  &__userImage {
+    min-width: 3rem;
+    max-width: 3.2rem;
+    min-height: 3rem;
+    max-height: 3rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    @include tablet-breakpoint {
+      min-width: 3rem;
+      max-width: 3.2rem;
+      min-height: 3rem;
+      max-height: 3rem;
+      min-width: 3rem;
+      max-width: 3.2rem;
+      min-height: 3rem;
+      max-height: 3rem;
+    }
+  }
+
+  &__upload {
+    width: 100%;
+    background-color: $primary-blue;
+    color: $primary-white;
+    border-radius: 0.25rem;
+    height: 1.5rem;
+    border: none;
+    margin-right: 0.5rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet-breakpoint {
+      max-height: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__upload--text {
+    font-weight: 600;
+    padding: 0.5rem;
+  }
+
+  &__upload:hover {
+    background-color: $primary-blue;
+  }
+}
