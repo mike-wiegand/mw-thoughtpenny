@@ -1,29 +1,38 @@
-// Titillium Regular
+// Avenir
 @font-face {
-  font-family: "Titillium";
-  src: url("../assets/Fonts/TitilliumWeb-Regular.woff2") format("woff2"),
-    url("../assets/Fonts/TitilliumWeb-Regular.woff") format("woff"),
-    url("../assets/Fonts/TitilliumWeb-Regular.ttf") format("truetype");
+  font-family: "AvenirNext";
+  src: url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Regular.woff2")
+      format("woff2"),
+    url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Regular.woff")
+      format("woff"),
+    url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Regular.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-// Titillium Bold
+// Avenir Bold
 @font-face {
-  font-family: "Titillium";
-  src: url("../assets/Fonts/TitilliumWeb-Bold.woff2") format("woff2"),
-    url("../assets/Fonts/TitilliumWeb-Bold.woff") format("woff"),
-    url("../assets/Fonts/TitilliumWeb-Bold.ttf") format("truetype");
+  font-family: "AvenirNext";
+  src: url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Bold.woff2")
+      format("woff2"),
+    url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Bold.woff")
+      format("woff"),
+    url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Bold.ttf")
+      format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
-// Titillium Semi Bold
+// Avenir Demi
 @font-face {
-  font-family: "Titillium";
-  src: url("../assets/Fonts/TitilliumWeb-SemiBold.woff2") format("woff2"),
-    url("../assets/Fonts/TitilliumWeb-SemiBold.woff") format("woff"),
-    url("../assets/Fonts/TitilliumWeb-SemiBold.ttf") format("truetype");
+  font-family: "AvenirNext";
+  src: url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Demi.woff2")
+      format("woff2"),
+    url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Demi.woff")
+      format("woff"),
+    url("../assets/Fonts/AvenirConverted/AvenirNextLTPro-Demi.ttf")
+      format("truetype");
   font-weight: 600;
   font-style: normal;
 }

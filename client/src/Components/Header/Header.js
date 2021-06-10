@@ -7,7 +7,7 @@ import "./Header.scss"
   return (
     <header className="header">
       <div className="header__imageContainer">
-        <Link to="/" className="header__logo"><img  src={logo} alt="brainflix"/></Link>
+        <Link to="/" className="header__logo"><img className="header__logoImg" src={logo} alt="brainflix"/></Link>
       </div>
       <div className="header__interact">
         <div className="header__search--container">
@@ -20,13 +20,13 @@ import "./Header.scss"
           />
           <div className="header__search--icon"></div>
         </div>
-        <div className="header__actions">
+        {/* <div className="header__actions">
           <Link to="/upload" className="header__uploadLink">
           <button className="header__upload">
               <span className="header__upload--text">UPLOAD</span>
           </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </header>
   );
