@@ -4,8 +4,8 @@ import "./Form.scss"
 function Form() {
     return (
         <section className="form">
-            <form className="form__form" id="form__formActive">
-            <div className="form__formTextContainer">
+            <form className="form__form">
+            <div className="form__formContainer">
                 <input 
                     className="form__entryTitle"
                     type="text"
@@ -14,18 +14,21 @@ function Form() {
                 ></input>
                 <textarea
                     name="entry"
-                    className="form__comment form__field"
+                    className="form__entryField"
                     placeholder="A place for your thoughts..."
                 ></textarea>
-                <input 
-                    className="form__entryTags"
-                    type="text"
-                    name="tags"
-                    placeholder="Tag your entry"
-                ></input>
             </div>
-            <input type="submit" value="Publish" className="form__button" />
+            <div className="form__tagsButtonContainer">
+                <input 
+                        className="form__entryTags"
+                        type="text"
+                        name="tags"
+                        placeholder="#Tag your entry"
+                ></input>
+                <input type="submit" value="Publish" className="form__button" />
+            </div>
           </form>
+          <div className="form__spacer"></div>
         </section>
     );
 }

@@ -1,9 +1,11 @@
 .homePage {
   display: flex;
   flex-direction: column;
+  padding: 0 7.5rem;
 
   &__entryContentContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
