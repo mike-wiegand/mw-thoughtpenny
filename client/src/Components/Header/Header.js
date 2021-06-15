@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/Images/logo_transparent_navy.png";
-import userIcon from "../../assets/Images/marcus-aurelius-bust-of-the-roman-emperor.jpg"
+import userIcon from "../../assets/Images/marcus-aurelius-bust-of-the-roman-emperor-removebg-preview.png"
 import { Link } from 'react-router-dom';
 import "./Header.scss"
 

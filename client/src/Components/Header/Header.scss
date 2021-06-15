@@ -11,6 +11,7 @@
   align-items: center;
   padding: 1rem;
   background-color: $primary-blue;
+  border-bottom: 1px solid $secondary-cloud;
 
   @include tablet-breakpoint {
     display: flex;
@@ -38,7 +39,7 @@
   &__search {
     min-height: 3rem;
     border-radius: 1.5rem;
-    border: 1px solid $primary-white;
+    border: 1px solid $secondary-cloud;
     width: 15rem;
     padding-left: 1rem;
   }
@@ -49,7 +50,7 @@
     font-size: 1rem;
     background-image: url("../../assets/Icons/Icon-search.svg");
     background-repeat: no-repeat;
-    background-position: 97% 50%;
+    background-position: 95% 50%;
   }
 
   &__userIcon {
@@ -58,9 +59,10 @@
     min-height: 3rem;
     max-height: 3rem;
     border-radius: 50%;
-    border: 1px solid $primary-white;
-    background-position: center;
+    border: 1px solid $secondary-cloud;
+    background-position: contain;
     background-size: cover;
+    background-color: $accent-green;
     display: flex;
     justify-content: center;
     margin-left: 2rem;

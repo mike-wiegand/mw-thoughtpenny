@@ -1,0 +1,9 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+
+  &__entryContentContainer {
+    display: flex;
+    flex-direction: row;
+  }
+}
