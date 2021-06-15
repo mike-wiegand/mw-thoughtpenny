@@ -4,4 +4,21 @@
 .tagsList {
   width: 25%;
   padding: 1rem;
+  border-left: 1px solid $primary-blue;
+  background-color: #fafafa;
+
+  &__tag {
+    color: $secondary-navy;
+    text-decoration: none;
+    // -webkit-text-stroke: 1px $primary-blue;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+    -webkit-text-stroke: 1px rgba(83, 223, 209, 0.5);
+  }
 }

@@ -4,4 +4,52 @@
 .entryList {
   width: 75%;
   padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  &__linkCard {
+    text-decoration: none;
+    color: black;
+    width: 30%;
+    margin: 0.5rem;
+    box-shadow: 0 0 4px 0px $secondary-cloud;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  &__linkCard:hover {
+    background: rgba(83, 223, 209, 0.07);
+  }
+
+  &__titleEntry {
+    font-size: 1rem;
+    color: $secondary-navy;
+    margin: 0.5rem 0;
+  }
+
+  &__contentsEntry {
+    color: #707070;
+    margin: 0;
+    padding-right: 0.5rem;
+    height: 100px;
+    text-overflow: ellipsis;
+    overflow: auto;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+  margin: 0 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #ececec; /* color of the tracking area */
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $secondary-cloud; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
 }
