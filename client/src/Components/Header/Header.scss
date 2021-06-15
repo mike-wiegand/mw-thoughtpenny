@@ -6,10 +6,11 @@
 // }
 .header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: $secondary-navy;
+  background-color: $primary-blue;
 
   @include tablet-breakpoint {
     display: flex;
@@ -20,7 +21,48 @@
     padding: 1rem 7.5rem;
   }
 
+  &__logo {
+    height: fit-content;
+  }
+
   &__logoImg {
-    width: 200px;
+    width: 400px;
+  }
+
+  &__interact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__search {
+    min-height: 3rem;
+    border-radius: 1.5rem;
+    border: 1px solid $primary-white;
+    width: 15rem;
+    padding-left: 1rem;
+  }
+
+  &__search::placeholder {
+    font-family: "AvenirNext";
+    color: black;
+    font-size: 1rem;
+    background-image: url("../../assets/Icons/Icon-search.svg");
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+  }
+
+  &__userIcon {
+    min-width: 3rem;
+    max-width: 3rem;
+    min-height: 3rem;
+    max-height: 3rem;
+    border-radius: 50%;
+    border: 1px solid $primary-white;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
   }
 }

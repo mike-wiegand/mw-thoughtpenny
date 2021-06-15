@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "../../assets/Images/logo_transparent_white.png";
+import logo from "../../assets/Images/logo_transparent_navy.png";
+import userIcon from "../../assets/Images/marcus-aurelius-bust-of-the-roman-emperor.jpg"
 import { Link } from 'react-router-dom';
 import "./Header.scss"
 
@@ -20,13 +21,9 @@ import "./Header.scss"
           />
           <div className="header__search--icon"></div>
         </div>
-        {/* <div className="header__actions">
-          <Link to="/upload" className="header__uploadLink">
-          <button className="header__upload">
-              <span className="header__upload--text">UPLOAD</span>
-          </button>
-          </Link>
-        </div> */}
+        <div className="header__userProfile">
+          <img className="header__userIcon" src={userIcon} alt="User Icon"/>
+        </div>
       </div>
     </header>
   );
