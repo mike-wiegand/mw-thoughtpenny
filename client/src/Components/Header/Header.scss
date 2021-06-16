@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
   background-color: $primary-blue;
   border-bottom: 1px solid $secondary-navy;
 
@@ -19,7 +19,7 @@
   }
 
   @include desktop-breakpoint {
-    padding: 1rem 7.5rem;
+    padding: 0rem 7.5rem;
   }
 
   &__logo {

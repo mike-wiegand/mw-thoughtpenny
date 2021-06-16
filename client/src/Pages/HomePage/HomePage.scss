@@ -1,3 +1,6 @@
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
+
 .homePage {
   display: flex;
   flex-direction: column;
@@ -7,5 +10,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  &__spacer {
+    background-color: lightgray;
+    height: 0rem;
+    margin-top: 0.5rem;
+    border: 0.1px solid $secondary-cloud;
+    box-shadow: 0 0 4px 0px $secondary-cloud;
   }
 }

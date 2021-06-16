@@ -46,6 +46,7 @@ class HomePage extends React.Component {
                 <div className="homePage__formContainer">
                     <Form />
                 </div>
+                <div className="homePage__spacer"></div>
                 <div className="homePage__entryContentContainer">
                     <EntryList entriesList={this.state.entriesList}/>
                     <TagsList tagsList={this.state.tagsList}/>

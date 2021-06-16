@@ -28,7 +28,6 @@ function Form() {
                 <button type="submit" className="form__button">Publish</button>
             </div>
           </form>
-          <div className="form__spacer"></div>
         </section>
     );
 }

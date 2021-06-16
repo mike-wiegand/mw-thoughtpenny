@@ -2,6 +2,7 @@
 @use "../../partials/variables" as *;
 
 .form {
+  padding: 0 2rem;
   &__formContainer {
     display: flex;
     flex-direction: column;
@@ -95,14 +96,6 @@
   &__button:hover {
     @include tabletDesktopButtonPrimaryHover;
     font-weight: 600;
-  }
-
-  &__spacer {
-    background-color: lightgray;
-    height: 0rem;
-    margin-top: 0.5rem;
-    border: 0.1px solid $secondary-cloud;
-    box-shadow: 0 0 4px 0px $secondary-cloud;
   }
 }
 
