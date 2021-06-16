@@ -25,7 +25,7 @@ function Form() {
                         name="tags"
                         placeholder="#Tag your entry"
                 ></input>
-                <input type="submit" value="Publish" className="form__button" />
+                <button type="submit" className="form__button">Publish</button>
             </div>
           </form>
           <div className="form__spacer"></div>
