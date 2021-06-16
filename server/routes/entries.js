@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Get all entries with related tag
 router.route('/').get((req, res) => {
-  Entry.fetchAll({ withRelated: ['tag'] })
+  Entry.fetchAll({ withRelated: ['tags'] })
     .then((entries) => {
       res.status(200).json(entries);
     })
@@ -15,8 +15,9 @@ router.route('/').get((req, res) => {
 // Get single entry by id
 router.route('/:id').get((req, res) => {
   Entry.where({ id: req.params.id })
-    .fetch({ withRelated: ['tag'] })
+    .fetch({ withRelated: ['tags'] })
     .then((entry) => {
+      console.log(entry.attributes);
       res.status(200).json({ entry });
     })
     .catch(() => {

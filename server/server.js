@@ -5,8 +5,8 @@ const port = process.env.PORT || 8080;
 const cors = require('cors');
 const fs = require('fs');
 const uuid = require('uuid');
-const entriesRoute = require('./routes/users');
-const tagsRoute = require('./routes/posts');
+const entriesRoute = require('./routes/entries');
+const tagsRoute = require('./routes/tags');
 
 const knex = require('knex')({
     client: 'mysql',

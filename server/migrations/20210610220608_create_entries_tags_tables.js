@@ -7,7 +7,7 @@ exports.up = function (knex) {
         .createTable('entries', function (table) {
         table.increments('id');
         table.integer('user_id').notNullable();
-        table.bigInteger('timestamp').notNullable();
+        table.timestamp('timestamp').defaultTo(knex.fn.now());
         table.string('title', 1024).notNullable();
         table.string('entry', 2400).notNullable();
         })
