@@ -2,12 +2,16 @@ import React from "react";
 import "./TagsList.scss"
 import { Link } from "react-router-dom";
 
-function TagsList() {
+function TagsList(props) {
     return (
         <section className="tagsList">
-            <Link to="/" className="tagsList__link"><h2 className="tagsList__tag">#mindfulness</h2></Link>
-            <Link to="/" className="tagsList__link"><h2 className="tagsList__tag">#stoicism</h2></Link>
-            <Link to="/" className="tagsList__link"><h2 className="tagsList__tag">#actualization</h2></Link>
+            {props.tagsList.map((tag) =>
+                <Link key={tag.id} to={"/tags/"} className="tagsList__link">
+                    <h2 className="tagsList__tag">
+                        #{tag.tag}
+                    </h2>
+                </Link>
+            )}
         </section>
     );
 }

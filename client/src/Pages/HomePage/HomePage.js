@@ -14,16 +14,17 @@ class HomePage extends React.Component {
 
     updateAllData() {
         axios.get(`${API_URL}/entries`)
-            .then((entryResponse) => {
-                console.log(entryResponse.data)
+            .then((entriesResponse) => {
+                console.log(entriesResponse.data)
                 this.setState({
-                    entriesList: entryResponse.data,
+                    entriesList: entriesResponse.data,
                 });
             });
         axios.get(`${API_URL}/tags`)
-            .then((response) => {
+            .then((tagsResponse) => {
+                console.log(tagsResponse.data)
                 this.setState({
-                    tagsList: response.data,
+                    tagsList: tagsResponse.data,
                 });
             });
     }
