@@ -8,7 +8,7 @@ import "./Header.scss"
   return (
     <header className="header">
       <div className="header__imageContainer">
-        <Link to="/" className="header__logo"><img className="header__logoImg" src={logo} alt="brainflix"/></Link>
+        <Link to="/." className="header__logo"><img className="header__logoImg" src={logo} alt="brainflix"/></Link>
       </div>
       <div className="header__interact">
         <div className="header__search--container">

@@ -16,6 +16,10 @@
 
   &__link {
     text-decoration: none;
+    font-family: inherit;
+    background-color: none;
+    background: none;
+    border: none;
   }
 
   &__link:hover {

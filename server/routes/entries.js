@@ -15,6 +15,7 @@ router.route('/').get((req, res) => {
 
 // Get single entry by id
 router.route('/:id').get((req, res) => {
+  console.log(req.params.id)
   Entry.where({ id: req.params.id })
     .fetch({ withRelated: ['tags'] })
     .then((entry) => {
@@ -36,11 +37,17 @@ router.route('/').post((req, res) => {
       (tag) => {
         console.log(tag);
         return tag; // -> pass tag object to next .then() method
-      },
-      () => {
-        res.status(404).json({ message: 'Not a valid tag id' });
       }
+      // ,
+      // () => {
+      //   res.status(404).json({ message: 'Not a valid tag id' });
+      // }
     )
+    .catch(() => {
+      return new Tag({
+        tag: req.body.tags
+      }).save()
+    })
     .then((tag) => {
       new Entry({
         title: req.body.title,

@@ -1,19 +1,25 @@
 import React from "react";
 import "./TagsList.scss"
-import { Link } from "react-router-dom";
 
 function TagsList(props) {
     return (
         <section className="tagsList">
+            <button onClick={() => {props.updateTagId(null)}} className="tagsList__link">
+                <h2 className="tagsList__tag">
+                        All Tags
+                    </h2>
+            </button>
             {props.tagsList.map((tag) =>
-                <Link key={tag.id} to={"/tags/"} className="tagsList__link">
+                <button key={tag.id} onClick={() => {props.updateTagId(tag.id)}} className="tagsList__link">
                     <h2 className="tagsList__tag">
                         #{tag.tag}
                     </h2>
-                </Link>
+                </button>
             )}
         </section>
     );
 }
 
 export default TagsList;
+
+// to={"/tags/"+ tag.id}

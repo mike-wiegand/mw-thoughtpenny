@@ -9,7 +9,8 @@ import { API_URL } from "../../utils/utils";
 class HomePage extends React.Component {
     state = {
         entriesList: null,
-        tagsList: null
+        tagsList: null,
+        currentTagId: null
     }
 
     updateAllData = () => {
@@ -29,9 +30,27 @@ class HomePage extends React.Component {
             });
     }
 
+    updateTagId = (tagId) => {
+        this.setState({
+            tagsList: this.state.tagsList,
+            currentTagId: tagId
+        });
+    }
+
     componentDidMount() {
         this.updateAllData();
     }
+
+    // componentDidUpdate(prevProps) {
+    //     const { currentTagId } = this.props.match.params;
+
+    //     if (prevProps.match.params.currentTagId !== currentTagId ) {
+    //         this.setState({
+    //             tagsList: this.state.tagsList,
+    //             currentTagId: currentTagId
+    //         });
+    //     }
+    // }
 
     render() {
         if (this.state.entriesList === null) {
@@ -48,8 +67,8 @@ class HomePage extends React.Component {
                 </div>
                 <div className="homePage__spacer"></div>
                 <div className="homePage__entryContentContainer">
-                    <EntryList entriesList={this.state.entriesList}/>
-                    <TagsList tagsList={this.state.tagsList}/>
+                    <EntryList entriesList={this.state.entriesList} currentTagId={this.state.currentTagId} />
+                    <TagsList tagsList={this.state.tagsList} updateTagId={this.updateTagId} />
                 </div>
             </main>
         );
