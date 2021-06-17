@@ -44,6 +44,11 @@
     padding-left: 1rem;
   }
 
+  &__search:focus {
+    outline: none;
+    border: 1px solid #2e66e5;
+  }
+
   &__search::placeholder {
     font-family: "AvenirNext";
     color: black;
