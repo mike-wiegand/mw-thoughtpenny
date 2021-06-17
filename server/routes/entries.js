@@ -1,6 +1,7 @@
 const express = require('express');
 const Entry = require('../models/entry');
 const Tag = require('../models/tag');
+const Entry_Tag = require('../models/entry_tag');
 const router = express.Router();
 
 // Get all entries with related tag
@@ -25,12 +26,15 @@ router.route('/:id').get((req, res) => {
     });
 });
 
+
+
 // Create new entry
 router.route('/').post((req, res) => {
-  Tag.where({ id: req.body.tag_id })
+  Tag.where({ tag: req.body.tags })
     .fetch()
     .then(
       (tag) => {
+        console.log(tag);
         return tag; // -> pass tag object to next .then() method
       },
       () => {
@@ -40,11 +44,14 @@ router.route('/').post((req, res) => {
     .then((tag) => {
       new Entry({
         title: req.body.title,
-        content: req.body.content,
-        tag_id: tag.id,
+        entry: req.body.entry,
       })
         .save()
         .then((newEntry) => {
+          new Entry_Tag({
+            entry_id: newEntry.id,
+            tag_id: req.body.tag_id
+          }).save() 
           res.status(201).json(newEntry);
         });
     })

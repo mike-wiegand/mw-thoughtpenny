@@ -12,7 +12,7 @@ class HomePage extends React.Component {
         tagsList: null
     }
 
-    updateAllData() {
+    updateAllData = () => {
         axios.get(`${API_URL}/entries`)
             .then((entriesResponse) => {
                 console.log(entriesResponse.data)
@@ -35,16 +35,16 @@ class HomePage extends React.Component {
 
     render() {
         if (this.state.entriesList === null) {
-            return <main className="homePage__loadingMsg">Loading your thoughts... 👋</main>
+            return <main className="homePage__loadingMsg">Gathering your thoughts... ✍️</main>
         }
         if (this.state.tagsList === null) {
-            return <main className="homePage__loadingMsg">Loading your thoughts... 👋</main>
+            return <main className="homePage__loadingMsg">Gathering your thoughts... ✍️</main>
         }
 
         return (
             <main className="homePage">
                 <div className="homePage__formContainer">
-                    <Form />
+                    <Form updateAllData={this.updateAllData}/>
                 </div>
                 <div className="homePage__spacer"></div>
                 <div className="homePage__entryContentContainer">

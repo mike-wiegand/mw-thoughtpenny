@@ -1,35 +1,53 @@
 import React from "react";
 import "./Form.scss"
+import axios from "axios";
+import { withRouter } from 'react-router-dom'
+import { API_URL } from "../../utils/utils";
 
-function Form() {
-    return (
-        <section className="form">
-            <form className="form__form">
-            <div className="form__formContainer">
-                <input 
-                    className="form__entryTitle"
-                    type="text"
-                    name="title"
-                    placeholder="Title your entry"
-                ></input>
-                <textarea
-                    name="entry"
-                    className="form__entryField"
-                    placeholder="A place for your thoughts..."
-                ></textarea>
-            </div>
-            <div className="form__tagsButtonContainer">
-                <input 
-                        className="form__entryTags"
+class Form extends React.Component {
+
+    publishEntry = (event) => {
+        event.preventDefault();
+        axios.post(`${API_URL}/entries`, {
+            title: event.target.title.value,
+            entry: event.target.entry.value,
+            tags: event.target.tags.value
+        }).then((_response) => {
+            alert("Entry Saved! Here is a penny for your thought 💰")
+            this.props.history.push("/")
+        })
+    }
+
+    render() {
+        return (
+            <section className="form">
+                <form onSubmit={this.publishEntry} className="form__form">
+                <div className="form__formContainer">
+                    <input 
+                        className="form__entryTitle"
                         type="text"
-                        name="tags"
-                        placeholder="#Tag your entry"
-                ></input>
-                <button type="submit" className="form__button">Publish</button>
-            </div>
-          </form>
-        </section>
-    );
+                        name="title"
+                        placeholder="Title your entry"
+                    ></input>
+                    <textarea
+                        name="entry"
+                        className="form__entryField"
+                        placeholder="A place for your thoughts..."
+                    ></textarea>
+                </div>
+                <div className="form__tagsButtonContainer">
+                    <input 
+                            className="form__entryTags"
+                            type="text"
+                            name="tags"
+                            placeholder="#Tag your entry"
+                    ></input>
+                    <button type="submit" className="form__button">Publish</button>
+                </div>
+              </form>
+            </section>
+        )
+    }
 }
 
-export default Form;
+export default withRouter(Form);
