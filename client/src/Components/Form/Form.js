@@ -42,10 +42,10 @@ class Form extends React.Component {
                     </div>
                     <div className="form__tagsButtonContainer">
                         <input 
-                                className="form__entryTags"
-                                type="text"
-                                name="tags"
-                                placeholder="#Tag your entry"
+                            className="form__entryTags"
+                            type="text"
+                            name="tags"
+                            placeholder="#Tag your entry"
                         ></input>
                         <button type="submit" className="form__button" >Publish</button>
                     </div>

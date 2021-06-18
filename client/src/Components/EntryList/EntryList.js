@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./EntryList.scss"
+import formatDate from "../../utils/utils";
 
 function EntryList(props) {
     return (
@@ -19,6 +20,12 @@ function EntryList(props) {
                             </h2>
                             <p className="entryList__contentsEntry">
                                 {entry.entry}
+                            </p>
+                            <p className="entryList__tag">
+                                {entry.tags.tag}
+                            </p>
+                            <p className="entryList__date">
+                                {formatDate(entry.timestamp)}
                             </p>
                         </div>
                     </Link>
