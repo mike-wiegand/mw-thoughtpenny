@@ -10,24 +10,48 @@
     padding: 1rem;
   }
 
-  &__editTitle {
-    font-size: 2rem;
-    color: $secondary-navy;
-    margin: 0.5rem 0;
-    padding: 1rem;
-    margin: 0;
-  }
-
-  &__formEntryStyle {
+  &__title {
     padding: 1rem;
     width: 100%;
     font-size: 1rem;
     font-family: inherit;
     border: none;
     border: 1px solid $primary-white;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $secondary-navy;
   }
 
-  &__formEntryStyle:active {
+  &__title:active {
+    border: 1px solid $primary-blue;
+    outline: none;
+    border-radius: 0.25rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $secondary-navy;
+  }
+
+  &__title:focus {
+    border: 1px solid $primary-blue;
+    outline: none;
+    border-radius: 0.25rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $secondary-navy;
+  }
+
+  &__entry {
+    padding: 1rem;
+    width: 100%;
+    height: 250px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    border: 1px solid $primary-white;
+  }
+
+  &__entry:active {
     border: 1px solid $primary-blue;
     outline: none;
     border-radius: 0.25rem;
@@ -35,7 +59,7 @@
     color: $secondary-navy;
   }
 
-  &__formEntryStyle:focus {
+  &__entry:focus {
     border: 1px solid $primary-blue;
     outline: none;
     border-radius: 0.25rem;
@@ -52,26 +76,34 @@
   }
 
   &__entryTags {
-    border: 1px solid $primary-white;
     padding: 1rem;
-    @include tabletDesktopBodyLarge;
+    width: 100%;
+    font-size: 1rem;
     font-family: inherit;
-    width: 87%;
-    margin-right: 2rem;
+    border: none;
+    border: 1px solid $primary-white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $secondary-navy;
   }
 
   &__entryTags:active {
     border: 1px solid $primary-blue;
     outline: none;
     border-radius: 0.25rem;
-    box-shadow: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $secondary-navy;
   }
 
   &__entryTags:focus {
     border: 1px solid $primary-blue;
     outline: none;
     border-radius: 0.25rem;
-    box-shadow: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $secondary-navy;
   }
 
   &__button {
@@ -108,11 +140,13 @@
     align-items: center;
     border-radius: 2rem;
     margin-left: 1rem;
+    color: $secondary-navy;
   }
 
   &__button--cancel:hover {
     @include tabletDesktopButtonPrimaryHover;
     font-weight: 600;
     border-radius: 2rem;
+    color: $primary-white;
   }
 }

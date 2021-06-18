@@ -12,9 +12,8 @@ class SingleEntryPage extends React.Component {
     handleChange = (event) => {
         this.setState({
             selectedEntry: {
-                id: this.state.selectedEntry.id,
-                title: this.state.selectedEntrytitle,
-                entry: event.target.value 
+                ...this.state.selectedEntry,
+                [event.target.name]: event.target.value
             },
         });
       }
@@ -23,6 +22,9 @@ class SingleEntryPage extends React.Component {
         console.log(this.props.match.params.id)
         axios.get(`${API_URL}/entries/${this.props.match.params.id}`).then((response) => {
             console.log(response.data);
+            let tagString = ""
+            response.data.entry.tags.forEach(tag => tagString += " #" + tag.tag)
+            response.data.entry.tags = tagString
             this.setState({
                 selectedEntry: response.data.entry,
             });
@@ -36,12 +38,16 @@ class SingleEntryPage extends React.Component {
         return (
             <section className="singleEntry">
                 <div className="singleEntry__singleContainer">
-                    <h2 className="singleEntry__editTitle">
-                        {this.state.selectedEntry.title}
-                    </h2>
+                    <input 
+                        className="singleEntry__title"
+                        type="text"
+                        name="title"
+                        value={this.state.selectedEntry.title}
+                        onChange={this.handleChange}
+                    ></input>
                     <textarea
                         name="entry"
-                        className="singleEntry__formEntryStyle"
+                        className="singleEntry__entry"
                         value={this.state.selectedEntry.entry}
                         onChange={this.handleChange}
                     ></textarea>
@@ -49,7 +55,8 @@ class SingleEntryPage extends React.Component {
                         className="singleEntry__entryTags"
                         type="text"
                         name="tags"
-                        placeholder="#Tag your entry"
+                        value={this.state.selectedEntry.tags}
+                        onChange={this.handleChange}
                     ></input>
                     <div className="singleEntry__buttonContainer">
                         <Link to="/" type="submit" className="singleEntry__button--cancel" >CANCEL</Link>
@@ -58,8 +65,6 @@ class SingleEntryPage extends React.Component {
                 </div>
             </section>
         )
-        
-        
     }
 }
 
