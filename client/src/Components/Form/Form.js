@@ -3,6 +3,7 @@ import "./Form.scss"
 import axios from "axios";
 import { withRouter } from 'react-router-dom'
 import { API_URL } from "../../utils/utils";
+// import TagInput from "../TagInput/TagInput"
 
 class Form extends React.Component {
 
@@ -48,6 +49,7 @@ class Form extends React.Component {
                         ></input>
                         <button type="submit" className="form__button" >Publish</button>
                     </div>
+                    {/* <TagInput /> */}
                 </form>
             </section>
         )

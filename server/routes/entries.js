@@ -33,21 +33,28 @@ router.route('/:id').get((req, res) => {
 router.route('/').post((req, res) => {
   Tag.where({ tag: req.body.tags })
     .fetch()
-    .then(
-      (tag) => {
-        console.log(tag);
-        return tag; // -> pass tag object to next .then() method
-      }
+    .catch(() => {
+        return new Tag({
+          tag: req.body.tags,
+        }).save()
+    })
+    // .then(
+    //   (tag) => {
+    //     console.log(tag);
+    //     return tag; // -> pass tag object to next .then() method
+    //   }
+
+      // Tag = {
+      //   id,
+      //   attributes = {
+      //     tag
+      //   }
+      // }
       // ,
       // () => {
       //   res.status(404).json({ message: 'Not a valid tag id' });
       // }
-    )
-    .catch(() => {
-      return new Tag({
-        tag: req.body.tags
-      }).save()
-    })
+    // )
     .then((tag) => {
       new Entry({
         title: req.body.title,
@@ -57,7 +64,7 @@ router.route('/').post((req, res) => {
         .then((newEntry) => {
           new Entry_Tag({
             entry_id: newEntry.id,
-            tag_id: req.body.tag_id
+            tag_id: tag.id
           }).save() 
           res.status(201).json(newEntry);
         });

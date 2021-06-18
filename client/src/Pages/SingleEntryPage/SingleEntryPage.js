@@ -8,6 +8,16 @@ class SingleEntryPage extends React.Component {
         selectedEntry: {},
     };
 
+    handleChange = (event) => {
+        this.setState({
+            selectedEntry: {
+                id: this.state.selectedEntry.id,
+                title: this.state.selectedEntry.title,
+                entry: event.target.value 
+            },
+        });
+      }
+
     componentDidMount() {
         console.log(this.props.match.params.id)
         axios.get(`${API_URL}/entries/${this.props.match.params.id}`).then((response) => {
@@ -19,9 +29,9 @@ class SingleEntryPage extends React.Component {
     }
 
     render () {
-        // if (!this.state.selectedEntry.id) {
-        //     return <main>Gathering your thoughts... ✍️</main>;
-        // }
+        if (!this.state.selectedEntry.id) {
+            return <main>Gathering your thoughts... ✍️</main>;
+        }
         return (
             <section className="entryList">
                 <div className="entryList__entryContainer">
@@ -31,6 +41,12 @@ class SingleEntryPage extends React.Component {
                     <p className="entryList__contentsEntry">
                         {this.state.selectedEntry.entry}
                     </p>
+                    <textarea
+                            name="entry"
+                            className="entryList__formEntryStyle"
+                            value={this.state.selectedEntry.entry}
+                            onChange={this.handleChange}
+                    ></textarea>
                 </div>
             </section>
         )
