@@ -2,7 +2,11 @@
 @use "../../partials/variables" as *;
 
 .tagsList {
+  display: flex;
+  flex-direction: column;
   width: 18%;
+  flex-grow: 3;
+  flex-flow: column;
   padding: 1rem;
   border-left: 1px solid $primary-blue;
   background-color: #fafafa;
@@ -12,7 +16,6 @@
     text-decoration: none;
     font-size: 1rem;
     width: 100%;
-
     display: flex;
     justify-content: flex-start;
     // -webkit-text-stroke: 1px $primary-blue;
