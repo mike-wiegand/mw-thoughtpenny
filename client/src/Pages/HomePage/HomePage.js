@@ -68,7 +68,7 @@ class HomePage extends React.Component {
                 <div className="homePage__spacer"></div>
                 <div className="homePage__entryContentContainer">
                     <EntryList entriesList={this.state.entriesList} currentTagId={this.state.currentTagId} />
-                    <TagsList tagsList={this.state.tagsList} updateTagId={this.updateTagId} />
+                    <TagsList tagsList={this.state.tagsList} updateTagId={this.updateTagId} currentTagId={this.state.currentTagId} />
                 </div>
             </main>
         );

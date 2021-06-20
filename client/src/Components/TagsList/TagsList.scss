@@ -16,6 +16,11 @@
     display: flex;
     justify-content: flex-start;
     // -webkit-text-stroke: 1px $primary-blue;
+
+    &--current {
+      text-decoration: underline;
+      -webkit-text-stroke: 1px rgba(83, 223, 209, 0.5);
+    }
   }
 
   &__link {

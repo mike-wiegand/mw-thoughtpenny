@@ -7,6 +7,10 @@ function Login() {
     return (
     <section className="login">
         <div className="login__background">
+            <div className="login__quoteContainer">
+                <p className="login__quote">"The universe is change; our life is what our thoughts make it."</p>
+                <p className="login__author">- Marcus Aurelius</p>
+            </div>
             <form className="login__form">
                 <div className="login__imageContainer">
                     <img className="login__logoImg" src={logoLogin} alt="thoughtpenny"/>
@@ -26,7 +30,7 @@ function Login() {
                     placeholder="**********">
                 </input>
                 <div className="login__buttonContainer">
-                    <Link to="/" type="submit" className="login__button" >SAVE</Link>
+                    <Link to="/" type="submit" className="login__button" >LOGIN</Link>
                 </div>
             </form>
         </div>

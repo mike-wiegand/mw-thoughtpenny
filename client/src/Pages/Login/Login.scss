@@ -15,18 +15,44 @@
     justify-content: center;
   }
 
+  &__quoteContainer {
+    position: absolute;
+    background: rgba(254, 254, 255, 0.4);
+    left: 8rem;
+    top: 10rem;
+    width: 300px;
+    border-radius: 100%;
+    padding: 0rem;
+    box-shadow: 0 0 4px 0px $secondary-cloud;
+  }
+
+  &__quote {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 600;
+    -webkit-text-fill-color: $primary-white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: $secondary-navy;
+    margin: 0.5rem;
+  }
+
+  &__author {
+    margin: 0;
+    margin-left: 2rem;
+    color: $secondary-navy;
+  }
+
   &__imageContainer {
     display: flex;
     justify-content: center;
   }
 
   &__logoImg {
-    width: 200px;
-    margin: 1rem 0;
+    width: 300px;
   }
 
   &__form {
-    margin-top: 10rem;
+    margin-top: 7rem;
     max-width: 42rem;
     display: flex;
     flex-direction: column;
@@ -36,11 +62,13 @@
     height: fit-content;
     padding: 2rem 2rem;
     border-radius: 0.25rem;
-    box-shadow: 0 0 4px 0px $secondary-cloud;
+    box-shadow: 0 0 4px 0px $secondary-navy;
   }
 
   &__userLabel {
     margin: 1rem 0 0.5rem 0;
+    padding-left: 1.5rem;
+    color: $secondary-navy;
   }
 
   &__userEntry {
@@ -49,18 +77,30 @@
     padding: 1rem;
     @include tabletDesktopBodyLarge;
     font-family: inherit;
-    width: 250px;
-    margin-right: 2rem;
     box-shadow: 0 0 4px 0px $secondary-cloud;
-    border-radius: 0.25rem;
+    border-radius: 2rem;
+  }
+
+  &__userEntry:active {
+    border: 1px solid $primary-blue;
+    outline: none;
+    border-radius: 2rem;
+    box-shadow: none;
+  }
+
+  &__userEntry:focus {
+    border: 1px solid $primary-blue;
+    outline: none;
+    border-radius: 2rem;
+    box-shadow: none;
   }
 
   &__buttonContainer {
-    margin: 1rem 0;
+    margin: 2rem 0 0 0;
   }
 
   &__button {
-    width: 25%;
+    width: 100%;
     min-height: 62px;
     @include tabletDesktopButtonPrimary;
     border: none;
@@ -70,7 +110,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    margin-left: 1rem;
     border: 1px solid $secondary-navy;
   }
 }
