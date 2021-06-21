@@ -14,6 +14,7 @@ function TagsList(props) {
                     <h2 className={props.currentTagId === tag.id ? "tagsList__tag tagsList__tag--current": "tagsList__tag"}>
                         #{tag.tag}
                     </h2>
+                    {/* <p>{props.currentTagId.length}</p> */}
                 </button>
             )}
         </section>
