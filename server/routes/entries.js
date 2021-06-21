@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Get all entries with related tag
 router.route('/').get((req, res) => {
-  Entry.fetchAll({ withRelated: ['tags'] })
+  Entry.query("orderBy", "timestamp", "DESC").fetchAll({ withRelated: ['tags'] })
     .then((entries) => {
       res.status(200).json(entries);
     })

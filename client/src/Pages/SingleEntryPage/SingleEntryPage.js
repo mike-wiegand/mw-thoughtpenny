@@ -31,6 +31,12 @@ class SingleEntryPage extends React.Component {
         });
     }
 
+    cursorToEnd(e) {
+        let temp_value = e.target.value
+        e.target.value = ''
+        e.target.value = temp_value
+      }
+
     render () {
         if (!this.state.selectedEntry.id) {
             return <main>Gathering your thoughts... ✍️</main>;
@@ -50,6 +56,8 @@ class SingleEntryPage extends React.Component {
                         className="singleEntry__entry"
                         value={this.state.selectedEntry.entry}
                         onChange={this.handleChange}
+                        autoFocus
+                        onFocus={this.cursorToEnd}
                     ></textarea>
                     <input 
                         className="singleEntry__entryTags"
