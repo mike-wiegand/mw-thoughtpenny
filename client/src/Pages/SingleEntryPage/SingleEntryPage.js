@@ -38,13 +38,29 @@ class SingleEntryPage extends React.Component {
         e.target.value = temp_value
       }
 
+    saveEntry = (event) => {
+        event.preventDefault();
+        console.log(event.target)
+        axios.put(`${API_URL}/entries/`+this.state.selectedEntry.id, {
+            title: event.target.title.value,
+            entry: event.target.entry.value,
+            tags: event.target.tags.value
+        }).then((_response) => {
+            event.target.title.value = ""
+            event.target.entry.value = ""
+            event.target.tags.value = ""
+            alert("Entry Saved and Updated!")
+            this.props.history.push("/")
+        })
+    }
+
     render () {
         if (!this.state.selectedEntry.id) {
             return <main>Gathering your thoughts... ✍️</main>;
         }
         return (
             <section className="singleEntry">
-                <div className="singleEntry__singleContainer">
+                <form className="singleEntry__singleContainer" onSubmit={this.saveEntry}>
                     <input 
                         className="singleEntry__title"
                         type="text"
@@ -72,11 +88,11 @@ class SingleEntryPage extends React.Component {
                             <button className="singleEntry__actionButtons--delete"><img className="singleEntry__deleteImg" src={deleteIcon} alt="delete" /></button>
                         </div>
                         <div className="singleEntry__buttonContainer">
-                            <Link to="/" type="submit" className="singleEntry__button--cancel" >CANCEL</Link>
-                            <Link to="/" type="submit" className="singleEntry__button" >SAVE</Link>
+                            <Link to="/" className="singleEntry__button--cancel" >CANCEL</Link>
+                            <button type="submit" className="singleEntry__button" >SAVE</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </section>
         )
     }
