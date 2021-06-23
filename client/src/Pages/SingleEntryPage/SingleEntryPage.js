@@ -3,6 +3,7 @@ import axios from "axios";
 import "./SingleEntryPage.scss"
 import { Link } from "react-router-dom";
 import { API_URL } from "../../utils/utils";
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg"
 
 class SingleEntryPage extends React.Component {
     state = {
@@ -66,9 +67,14 @@ class SingleEntryPage extends React.Component {
                         value={this.state.selectedEntry.tags}
                         onChange={this.handleChange}
                     ></input>
-                    <div className="singleEntry__buttonContainer">
-                        <Link to="/" type="submit" className="singleEntry__button--cancel" >CANCEL</Link>
-                        <Link to="/" type="submit" className="singleEntry__button" >SAVE</Link>
+                    <div className="singleEntry__actionButtons">
+                        <div className="singleEntry__deleteContainer">
+                            <button className="singleEntry__actionButtons--delete"><img className="singleEntry__deleteImg" src={deleteIcon} alt="delete" /></button>
+                        </div>
+                        <div className="singleEntry__buttonContainer">
+                            <Link to="/" type="submit" className="singleEntry__button--cancel" >CANCEL</Link>
+                            <Link to="/" type="submit" className="singleEntry__button" >SAVE</Link>
+                        </div>
                     </div>
                 </div>
             </section>
