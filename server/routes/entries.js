@@ -80,6 +80,7 @@ router.route('/:id').put((req, res) => {
     let tagArray = req.body.tags.replace(/#/g,'').trim().split(' ')
     Entry_Tag.where({entry_id: req.params.id}).destroy()
     tagArray.forEach(newTag => {
+      
       if (newTag.length > 0) { 
         Tag.where({ tag: newTag })
           .fetch()
@@ -93,6 +94,9 @@ router.route('/:id').put((req, res) => {
               entry_id: req.params.id,
               tag_id: tag.id
             }).save()
+            // .catch((error) => {
+            //   console.log(error)
+            // })
           })
       }
     })
