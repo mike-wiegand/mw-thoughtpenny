@@ -73,7 +73,6 @@
 
   &__userEntry {
     border: 1px solid $primary-white;
-    // border-bottom: 1px solid $secondary-cloud;
     padding: 1rem;
     @include tabletDesktopBodyLarge;
     font-family: inherit;
@@ -100,9 +99,9 @@
   }
 
   &__button {
+    @include tabletDesktopButtonPrimary;
     width: 100%;
     min-height: 62px;
-    @include tabletDesktopButtonPrimary;
     border: none;
     font-weight: 600;
     text-decoration: none;

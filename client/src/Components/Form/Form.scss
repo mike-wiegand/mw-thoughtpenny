@@ -18,15 +18,13 @@
   &__form {
     border-top: none;
     padding-top: 1rem;
-    // box-shadow: 0 0 15px 0px $secondary-cloud;
-    // clip-path: inset(0px -2px 0px -2px);
   }
 
   &__entryTitle {
+    @include tabletDesktopBodyLarge;
     border: 1px solid $primary-white;
     padding: 1rem;
     margin-bottom: 1rem;
-    @include tabletDesktopBodyLarge;
     font-family: inherit;
     font-size: 1rem;
     color: $secondary-navy;
@@ -53,9 +51,9 @@
   }
 
   &__entryField {
+    @include tabletDesktopBodyLarge;
     border: 1px solid $primary-white;
     padding: 1rem;
-    @include tabletDesktopBodyLarge;
     font-family: inherit;
     box-shadow: 0 0 4px 0px $secondary-cloud;
     border-radius: 0.25rem;
@@ -77,10 +75,9 @@
   }
 
   &__entryTags {
-    border: 1px solid $primary-white;
-    // border-bottom: 1px solid $secondary-cloud;
-    padding: 1rem;
     @include tabletDesktopBodyLarge;
+    border: 1px solid $primary-white;
+    padding: 1rem;
     font-family: inherit;
     width: 84%;
     margin-right: 2rem;
@@ -105,9 +102,9 @@
   }
 
   &__button {
+    @include tabletDesktopButtonPrimary;
     width: 14%;
     min-height: 62px;
-    @include tabletDesktopButtonPrimary;
     border: none;
     font-weight: 600;
     border-radius: 2rem;

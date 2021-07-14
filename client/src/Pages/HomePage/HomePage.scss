@@ -4,7 +4,6 @@
 .homePage {
   display: flex;
   flex-direction: column;
-  // padding: 0 2rem;
   height: 100%;
 
   &__entryContentContainer {
@@ -12,6 +11,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
   &__spacer {
     background-color: lightgray;
     height: 0rem;
